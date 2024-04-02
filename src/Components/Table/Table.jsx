@@ -56,6 +56,7 @@ const Table = ({ formDataArray, handleEdit, handleDelete }) => {
             <th>Phone Number</th>
             <th>Date of Birth</th>
             <th colSpan={4}>Address</th>
+            <th>Picture</th>
             <th>Action</th>
           </tr>
           <tr>
@@ -67,6 +68,7 @@ const Table = ({ formDataArray, handleEdit, handleDelete }) => {
             <th>District</th>
             <th>Province</th>
             <th>Country</th>
+            <th></th>
             <th></th>
           </tr>
         </thead>
@@ -81,6 +83,7 @@ const Table = ({ formDataArray, handleEdit, handleDelete }) => {
               <td>{data.district}</td>
               <td>{data.province}</td>
               <td>{data.country}</td>
+              <td>{data.profilePicture}</td>
               <td>
                 <div className="action-buttons">
                   <button

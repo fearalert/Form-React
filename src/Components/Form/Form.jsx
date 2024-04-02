@@ -9,6 +9,8 @@ const Form = ({ form, handleChange, handleSubmit }) => {
   const [dobError, setDobError] = useState('');
   const [provinceError, setProvinceError] = useState('');
   const [fileError, setFileError] = useState('');
+  const [cityError, setCityError] = useState('');
+  const [districtError, setDistrictError] = useState('');
 
 
   // Validation functions
@@ -63,6 +65,24 @@ const Form = ({ form, handleChange, handleSubmit }) => {
     }
   };
 
+  const validateCity = () => {
+    if (!form.city) {
+      setCityError('City is required');
+    } else {
+      setCityError('');
+    }
+  };
+
+  const validateDistrict = () => {
+    if (!form.district) {
+      setDistrictError('District is required');
+    } else {
+      setDistrictError('');
+    }
+  };
+
+
+
   const validateFile = () => {
     if (form.profilePicture) {
       const fileType = form.profilePicture.type;
@@ -106,6 +126,16 @@ const Form = ({ form, handleChange, handleSubmit }) => {
     validateFile();
   };
 
+  const handleCityChange = (e) => {
+    handleChange(e);
+    validateFile();
+  };
+
+  const handleDistrictChange = (e) => {
+    handleChange(e);
+    validateFile();
+  };
+
   // Submit handler
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -115,6 +145,8 @@ const Form = ({ form, handleChange, handleSubmit }) => {
     validatePhoneNum();
     validateDob();
     validateProvince();
+    validateCity();
+    validateDistrict();
 
     // If all fields are valid, submit the form
     if (!nameError && !emailError && !phoneNumError && !dobError && !provinceError) {
@@ -188,6 +220,35 @@ const Form = ({ form, handleChange, handleSubmit }) => {
           />
           {dobError && <p className="error-label">{dobError}</p>}
         </div>
+
+        <div className="form-group">
+          <label htmlFor="city" className="form-label">City:</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            placeholder="Enter your city"
+            value={form.city}
+            onChange={handleCityChange}
+            className={`form-input ${cityError ? 'error' : ''}`}
+          />
+          {cityError && <p className="error-label">{cityError}</p>}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="district" className="form-label">District:</label>
+          <input
+            type="text"
+            id="district"
+            name="district"
+            placeholder="Enter your district"
+            value={form.district}
+            onChange={handleDistrictChange}
+            className={`form-input ${districtError ? 'error' : ''}`}
+          />
+          {districtError && <p className="error-label">{districtError}</p>}
+        </div>
+
 
         <div className="form-group">
           <label htmlFor="province" className="form-label">Province:</label>

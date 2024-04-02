@@ -58,7 +58,7 @@ const Popup = ({ form, handleEditChange, handleUpdate, handleCancel }) => {
               />
             </div>
             <div className="popup-input">
-              <label htmlFor="address">Address: </label>
+              <label htmlFor="address">City: </label>
               <input
                 type="text"
                 id="city"
@@ -68,6 +68,7 @@ const Popup = ({ form, handleEditChange, handleUpdate, handleCancel }) => {
                 value={form.city}
                 onChange={handleEditChange}
               />
+            <label htmlFor="address">District: </label>
               <input
                 type="text"
                 id="district"
@@ -77,6 +78,7 @@ const Popup = ({ form, handleEditChange, handleUpdate, handleCancel }) => {
                 value={form.district}
                 onChange={handleEditChange}
               />
+            <label htmlFor="address">Select Province: </label>
               <select
                 name="province"
                 id="province"
@@ -93,6 +95,7 @@ const Popup = ({ form, handleEditChange, handleUpdate, handleCancel }) => {
                 <option value="Karnali">Karnali</option>
                 <option value="Sudurpaschim">Sudurpaschim</option>
               </select>
+            <label htmlFor="address">Country: </label>
               <input
                 type="text"
                 id="country"
