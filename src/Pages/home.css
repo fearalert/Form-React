@@ -1,0 +1,27 @@
+/* home.css */
+
+.container {
+    margin-top: 2rem;
+  }
+  
+  .container form {
+    margin-bottom: 2rem;
+  }
+  
+  .container .flex {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .container .flex a {
+    padding: 0.5rem 1rem;
+    background-color: #4299e1;
+    color: #fff;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .container .flex a:hover {
+    background-color: #3182ce;
+  }
+  
