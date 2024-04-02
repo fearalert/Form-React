@@ -8,6 +8,8 @@ const Form = ({ form, handleChange, handleSubmit }) => {
   const [phoneNumError, setPhoneNumError] = useState('');
   const [dobError, setDobError] = useState('');
   const [provinceError, setProvinceError] = useState('');
+  const [fileError, setFileError] = useState('');
+
 
   // Validation functions
   const validateName = () => {
@@ -61,6 +63,18 @@ const Form = ({ form, handleChange, handleSubmit }) => {
     }
   };
 
+  const validateFile = () => {
+    if (form.profilePicture) {
+      const fileType = form.profilePicture.type;
+      if (fileType !== 'image/png') {
+        setFileError('Profile picture must be in PNG format');
+      } else {
+        setFileError('');
+      }
+    }
+  };
+
+
   // Event handlers
   const handleNameChange = (e) => {
     handleChange(e);
@@ -85,6 +99,11 @@ const Form = ({ form, handleChange, handleSubmit }) => {
   const handleProvinceChange = (e) => {
     handleChange(e);
     validateProvince();
+  };
+
+  const handleFileChange = (e) => {
+    handleChange(e);
+    validateFile();
   };
 
   // Submit handler
@@ -204,6 +223,19 @@ const Form = ({ form, handleChange, handleSubmit }) => {
             readOnly
             className="form-input"
           />
+        </div>
+
+         <div className="form-group">
+          <label htmlFor="profilePicture" className="form-label">Profile Picture (PNG only):</label>
+          <input
+            type="file"
+            id="profilePicture"
+            name="profilePicture"
+            accept=".png"
+            onChange={handleFileChange}
+            className={`form-input ${fileError ? 'error' : ''}`}
+          />
+          {fileError && <p className="error-label">{fileError}</p>}
         </div>
 
         <div className="form-group">
