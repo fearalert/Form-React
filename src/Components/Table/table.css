@@ -1,15 +1,32 @@
-/* table.css */
-
-/* Table container styles */
 .table-container {
   width: 100%;
   overflow-x: auto;
 }
 
-/* Table styles */
 .table {
   width: 100%;
   border-collapse: collapse;
+}
+
+.table-header {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.search-bar input{
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus{
+  border: 2px solid dodgerblue;
 }
 
 .table th,
@@ -21,11 +38,11 @@
 
 .table th {
   background-color: #f2f2f2;
-  cursor: pointer; /* Make the header cells clickable */
+  cursor: pointer;
 }
 
 .table th.sortable:hover {
-  background-color: #ddd; /* Change background color on hover */
+  background-color: #ddd;
 }
 
 .table th:first-child {
@@ -40,7 +57,6 @@
   border-bottom-left-radius: 5px;
 }
 
-/* Action buttons styles */
 .action-buttons {
   display: flex;
 }

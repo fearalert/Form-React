@@ -36,7 +36,7 @@
   border: 1px solid #ccc;
   border-radius: 6px;
   transition: border-color 0.3s;
-  box-sizing: border-box; /* Add this */
+  box-sizing: border-box;
 }
 
 .error-label {

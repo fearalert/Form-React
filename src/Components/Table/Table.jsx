@@ -4,6 +4,7 @@ import "./table.css";
 const Table = ({ formDataArray, handleEdit, handleDelete }) => {
   const [sortOrder, setSortOrder] = useState("asc");
   const [sortedData, setSortedData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const sortedArray = [...formDataArray].sort((a, b) => {
@@ -24,9 +25,27 @@ const Table = ({ formDataArray, handleEdit, handleDelete }) => {
     return sortOrder === "asc" ? "▲" : "▼";
   };
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredData = sortedData.filter((data) =>
+    data.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="table-container">
-      <h1 className="table-title">Users Data</h1>
+      <div className="table-header">
+        <h1 className="table-title">Users Data</h1>
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search by name..."
+            value={searchTerm}
+            onChange={handleSearch}
+          />
+        </div>
+      </div>
       <table className="table">
         <thead>
           <tr>
@@ -52,7 +71,7 @@ const Table = ({ formDataArray, handleEdit, handleDelete }) => {
           </tr>
         </thead>
         <tbody>
-          {sortedData.map((data, index) => (
+          {filteredData.map((data, index) => (
             <tr key={index}>
               <td>{data.name}</td>
               <td>{data.email}</td>
