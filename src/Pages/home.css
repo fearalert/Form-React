@@ -1,3 +1,4 @@
+
 .container {
     margin-top: 2rem;
   }
@@ -15,7 +16,7 @@
     padding: 0.5rem 1rem;
     background-color: #4299e1;
     color: #fff;
-    border-radius: 9999px;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
   }
   
