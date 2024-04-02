@@ -69,7 +69,7 @@ const Profile = () => {
       <div className="flex">
         <Link
           to="/"
-          className="text-lg py-2 px-4 mx-auto bg-blue-500 text-white rounded-full hover:bg-blue-700"
+          className="text-lg"
         >
           Home
         </Link>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
-import "./home.css"; // Import the CSS file
+import "./home.css";
 import Form from "../Components/Form/Form";
 import Table from "../Components/Table/Table";
 import Popup from "../Components/Popup/Popup";
@@ -154,7 +154,7 @@ const Home = () => {
       <div className="flex">
         <Link
           to="/profile"
-          className="text-lg py-2 px-4 mx-auto bg-blue-500 text-white rounded-full hover:bg-blue-700"
+          className="text-lg"
         >
           Profile
         </Link>
