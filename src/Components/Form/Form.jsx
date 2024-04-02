@@ -180,14 +180,14 @@ const Form = ({ form, handleChange, handleSubmit }) => {
             onChange={handleProvinceChange}
             className={`form-input ${provinceError ? 'error' : ''}`}
           >
-            <option>Your Province</option>
-            <option value="Koshi">Koshi</option>
-            <option value="Madhesh">Madhesh</option>
-            <option value="Bagmati">Bagmati</option>
-            <option value="Gandaki">Gandaki</option>
-            <option value="Lumbini">Lumbini</option>
-            <option value="Karnali">Karnali</option>
-            <option value="Sudurpaschim">Sudurpaschim</option>
+             <option> Select Province </option>
+                <option value="Koshi">Koshi</option>
+                <option value="Madhesh">Madhesh</option>
+                <option value="Bagmati">Bagmati</option>
+                <option value="Gandaki">Gandaki</option>
+                <option value="Lumbini">Lumbini</option>
+                <option value="Karnali">Karnali</option>
+                <option value="Sudurpaschim">Sudurpaschim</option>
           </select>
           {provinceError && <p className="error-label">{provinceError}</p>}
         </div>

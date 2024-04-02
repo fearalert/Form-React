@@ -85,13 +85,13 @@ const Popup = ({ form, handleEditChange, handleUpdate, handleCancel }) => {
                 onChange={handleEditChange}
               >
                 <option> Select Province </option>
-                <option value="province 1">Koshi</option>
-                <option value="province 2">Madhesh</option>
-                <option value="province 3">Bagmati</option>
-                <option value="province 4">Gandaki</option>
-                <option value="province 5">Lumbini</option>
-                <option value="province 6">Karnali</option>
-                <option value="province 7">Sudurpaschim</option>
+                <option value="Koshi">Koshi</option>
+                <option value="Madhesh">Madhesh</option>
+                <option value="Bagmati">Bagmati</option>
+                <option value="Gandaki">Gandaki</option>
+                <option value="Lumbini">Lumbini</option>
+                <option value="Karnali">Karnali</option>
+                <option value="Sudurpaschim">Sudurpaschim</option>
               </select>
               <input
                 type="text"
